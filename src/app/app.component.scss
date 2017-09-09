@@ -46,3 +46,21 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #e67e22;
+  align-items: center;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+}
