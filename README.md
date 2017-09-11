@@ -9,7 +9,7 @@ The project is using:
 
 ## Testing the app
 
-Go to [https://pablohpsilva.github.io/betsson-app-challenge/](https://pablohpsilva.github.io/betsson-app-challenge/) to the live application.
+Go to [https://pablohpsilva.github.io/betsson-app-challenge/](https://pablohpsilva.github.io/betsson-app-challenge/) to see it working.
 
 **OR**
 
