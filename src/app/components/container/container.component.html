@@ -1,0 +1,19 @@
+<div #container class="container">
+  <app-tile
+    *ngFor="let movie of filteredList"
+    [title]="movie.name"
+    [description]="movie.description"
+    [genres]="movie.genres"
+    [rating]="movie.rate"
+    [length]="movie.length"
+    [img]="movie.img"
+    [youtube]="movie.youtube"
+    [show]="!!movie.hasOwnProperty('show') ? movie.show : false"
+    (click)="onMovieClick(movie)"
+    ></app-tile>
+  <div *ngIf="!filteredList || !filteredList.length">
+    <span>
+      No movies found
+    </span>
+  </div>
+</div>

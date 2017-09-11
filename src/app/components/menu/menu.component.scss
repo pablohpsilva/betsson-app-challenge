@@ -32,6 +32,13 @@
       opacity: 1;
       pointer-events: auto;
     }
+
+    &.fixed {
+      &::after {
+        opacity: 0;
+        pointer-events: auto;
+      }
+    }
   }
 
   .app-menu {
@@ -82,16 +89,19 @@
 /* aux */
 .layout {
   width: 100%;
-  height: 100%;
-  background-color: #f5f5f5;
-  position: relative;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
 }
 
 .header {
-  background-color: #ccc;
+  background-color: rgba(#000, 0.8);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #FFF;
 
   .menu-content {
     display: flex;
@@ -99,6 +109,10 @@
     justify-content: center;
     flex: 1;
     padding: 0 8px;
+  }
+
+  .menu-right {
+    display: flex;
   }
 
   .menu-item {
@@ -110,9 +124,16 @@
   content: "Menu";
   color: #fff;
   cursor: pointer;
-  background-color: #666;
+  background-color: transparent;
   width: 40px;
   height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 20px;
+  }
 }
 
 .app-menu {

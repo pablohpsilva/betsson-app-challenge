@@ -1,3 +1,9 @@
 <div>
-  <app-menu></app-menu>
+  <nav>
+    <app-menu (notify)="updateTextFilter($event)"></app-menu>
+  </nav>
+
+  <aside>
+    <app-container [movies]="movies" [textFilter]="textFilter"></app-container>
+  </aside>
 </div>
