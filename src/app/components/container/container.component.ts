@@ -45,6 +45,8 @@ export class ContainerComponent implements OnInit, AfterViewInit {
         elem.classList.add('expanding');
         elem.classList.remove('collapsed');
         elem.classList.add('expanded');
+        window.scrollTo(0, 0);
+        document.body.style.overflowY = "hidden";
 
         const collapsed = elem.getBoundingClientRect();
         elem.classList.remove('expanded');
@@ -76,6 +78,7 @@ export class ContainerComponent implements OnInit, AfterViewInit {
 
     close.addEventListener('click', () => {
       if (elem.classList.contains('expanded') && !elem.classList.contains('collapsing')) {
+        document.body.style.overflowY = "scroll";
 
         requestAnimationFrame(() => {
           elem.classList.add('collapsing');
