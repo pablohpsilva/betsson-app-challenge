@@ -44,7 +44,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_mock_movie_mock_data__ = __webpack_require__("../../../../../src/betsson-app-challenge/assets/mock/movie.mock-data.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_mock_movie_mock_data__ = __webpack_require__("../../../../../src/assets/mock/movie.mock-data.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -202,6 +202,8 @@ var ContainerComponent = (function () {
                 elem.classList.add('expanding');
                 elem.classList.remove('collapsed');
                 elem.classList.add('expanded');
+                window.scrollTo(0, 0);
+                document.body.style.overflowY = "hidden";
                 var collapsed = elem.getBoundingClientRect();
                 elem.classList.remove('expanded');
                 elem.classList.add('collapsed');
@@ -224,6 +226,7 @@ var ContainerComponent = (function () {
         var close = elem.querySelector('.close');
         close.addEventListener('click', function () {
             if (elem.classList.contains('expanded') && !elem.classList.contains('collapsing')) {
+                document.body.style.overflowY = "scroll";
                 requestAnimationFrame(function () {
                     elem.classList.add('collapsing');
                     elem.classList.remove('expanded');
@@ -313,7 +316,7 @@ var _a;
 /***/ "../../../../../src/app/components/menu/menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"menu\">\n  <div\n    class=\"app-menu\">\n    <ul class=\"menu-ul\">\n      <li>\n        <a\n          href=\"https://www.imdb.com\">\n          IMDB full\n        </a>\n      </li>\n      <li>\n        <a\n          href=\"https://github.com/pablohpsilva\">\n          pablohpsilva Github\n        </a>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"layout\">\n  <div class=\"header\">\n    <div class=\"menu-icon\">\n      <img\n        src=\"/betsson-app-challenge/assets/images/icons/three.svg\"\n        alt=\"\"/>\n    </div>\n\n    <div\n      class=\"menu-content\">\n      <div\n        [hidden]=\"searchable\"\n        class=\"menu-item\">\n        IMDB-Lite\n      </div>\n      <div\n        [hidden]=\"!searchable\"\n        class=\"menu-item\">\n        <input\n          [(ngModel)]=\"textFilter\"\n          (keyup)=\"textFilterMovies()\"\n          type=\"text\"/>\n      </div>\n    </div>\n\n    <div\n      class=\"menu-right\">\n      <div\n        (click)=\"toggleSearchBar()\"\n        class=\"menu-icon\">\n        <img\n          src=\"/betsson-app-challenge/assets/images/icons/search.svg\"\n          alt=\"\"/>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"menu\">\n  <div\n    class=\"app-menu\">\n    <ul class=\"menu-ul\">\n      <li>\n        <a\n          href=\"https://www.imdb.com\">\n          IMDB full\n        </a>\n      </li>\n      <li>\n        <a\n          href=\"https://github.com/pablohpsilva\">\n          pablohpsilva Github\n        </a>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"layout\">\n  <div class=\"header\">\n    <div class=\"menu-icon\">\n      <img\n        src=\"/assets/images/icons/three.svg\"\n        alt=\"\"/>\n    </div>\n\n    <div\n      class=\"menu-content\">\n      <div\n        [hidden]=\"searchable\"\n        class=\"menu-item\">\n        IMDB-Lite\n      </div>\n      <div\n        [hidden]=\"!searchable\"\n        class=\"menu-item\">\n        <input\n          class=\"menu-input\"\n          [(ngModel)]=\"textFilter\"\n          (keyup)=\"textFilterMovies()\"\n          type=\"text\"/>\n      </div>\n    </div>\n\n    <div\n      class=\"menu-right\">\n      <div\n        (click)=\"toggleSearchBar()\"\n        class=\"menu-icon\">\n        <img\n          src=\"/assets/images/icons/search.svg\"\n          alt=\"\"/>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -325,7 +328,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".menu {\n  position: fixed;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  pointer-events: none;\n  z-index: 150; }\n  .menu::after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    background: rgba(0, 0, 0, 0.4);\n    opacity: 0;\n    will-change: opacity;\n    pointer-events: none;\n    transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1); }\n\n.menu--visible {\n  pointer-events: auto; }\n  .menu--visible.menu::after {\n    opacity: 1;\n    pointer-events: auto; }\n  .menu--visible.menu.fixed::after {\n    opacity: 0;\n    pointer-events: auto; }\n  .menu--visible .app-menu {\n    -webkit-transform: none;\n    transform: none; }\n\n.app-menu {\n  background-color: #fff;\n  color: #fff;\n  position: relative;\n  max-width: 400px;\n  width: 90%;\n  height: 100%;\n  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);\n  -webkit-transform: translateX(-103%);\n  transform: translateX(-103%);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  will-change: transform;\n  z-index: 160;\n  pointer-events: auto; }\n\n.menu--animatable .app-menu {\n  transition: all 130ms ease-in; }\n\n.menu--visible.menu--animatable .app-menu {\n  transition: all 330ms ease-out; }\n\n.menu--visible.menu:after {\n  opacity: 1;\n  pointer-events: auto; }\n\n.menu-ul {\n  list-style: none;\n  padding: 0 16px; }\n  .menu-ul li {\n    margin-bottom: 16px; }\n  .menu-ul a {\n    text-decoration: none;\n    color: #000; }\n\n/* aux */\n.layout {\n  width: 100%;\n  background-color: transparent;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 5; }\n\n.header {\n  background-color: rgba(0, 0, 0, 0.8);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  color: #FFF; }\n  .header .menu-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    padding: 0 8px; }\n  .header .menu-right {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; }\n  .header .menu-item {\n    padding: 8px; }\n\n.menu-icon {\n  content: \"Menu\";\n  color: #fff;\n  cursor: pointer;\n  background-color: transparent;\n  width: 40px;\n  height: 40px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n  .menu-icon img {\n    width: 20px; }\n\n.app-menu {\n  width: 300px;\n  height: 100%;\n  box-shadow: none;\n  background-color: #ddd; }\n\n.menu:after {\n  width: 100%;\n  height: 100%; }\n", ""]);
+exports.push([module.i, ".menu {\n  position: fixed;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  pointer-events: none;\n  z-index: 150; }\n  .menu::after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    background: rgba(0, 0, 0, 0.4);\n    opacity: 0;\n    will-change: opacity;\n    pointer-events: none;\n    transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1); }\n\n.menu--visible {\n  pointer-events: auto; }\n  .menu--visible.menu::after {\n    opacity: 1;\n    pointer-events: auto; }\n  .menu--visible.menu.fixed::after {\n    opacity: 0;\n    pointer-events: auto; }\n  .menu--visible .app-menu {\n    -webkit-transform: none;\n    transform: none; }\n\n.app-menu {\n  background-color: #fff;\n  color: #fff;\n  position: relative;\n  max-width: 400px;\n  width: 90%;\n  height: 100%;\n  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);\n  -webkit-transform: translateX(-103%);\n  transform: translateX(-103%);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  will-change: transform;\n  z-index: 160;\n  pointer-events: auto; }\n\n.menu--animatable .app-menu {\n  transition: all 130ms ease-in; }\n\n.menu--visible.menu--animatable .app-menu {\n  transition: all 330ms ease-out; }\n\n.menu--visible.menu:after {\n  opacity: 1;\n  pointer-events: auto; }\n\n.menu-ul {\n  list-style: none;\n  padding: 0 16px; }\n  .menu-ul li {\n    margin-bottom: 16px; }\n  .menu-ul a {\n    text-decoration: none;\n    color: #000; }\n\n/* aux */\n.layout {\n  width: 100%;\n  background-color: transparent;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 5; }\n\n.header {\n  background-color: rgba(0, 0, 0, 0.8);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  color: #FFF; }\n  .header .menu-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    padding: 0 8px; }\n  .header .menu-right {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; }\n  .header .menu-item {\n    padding: 8px; }\n\n.menu-input {\n  border: none;\n  border-radius: 1px;\n  padding: 4px 8px;\n  margin: 0; }\n\n.menu-icon {\n  content: \"Menu\";\n  color: #fff;\n  cursor: pointer;\n  background-color: transparent;\n  width: 40px;\n  height: 40px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n  .menu-icon img {\n    width: 20px; }\n\n.app-menu {\n  width: 300px;\n  height: 100%;\n  box-shadow: none;\n  background-color: #ddd; }\n\n.menu:after {\n  width: 100%;\n  height: 100%; }\n", ""]);
 
 // exports
 
@@ -341,7 +344,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_mock_movie_model__ = __webpack_require__("../../../../../src/betsson-app-challenge/assets/mock/movie.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_mock_movie_model__ = __webpack_require__("../../../../../src/assets/mock/movie.model.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -479,7 +482,7 @@ var TileComponent = (function () {
     TileComponent.prototype.getBackgroundStyle = function () {
         return {
             'background-size': 'cover',
-            'background-image': "url(../../../betsson-app-challenge/assets/images/movie-covers/" + this.img + ")",
+            'background-image': "url(../../../assets/images/movie-covers/" + this.img + ")",
             'background-position': 'center',
         };
     };
@@ -536,12 +539,12 @@ var _a;
 
 /***/ }),
 
-/***/ "../../../../../src/betsson-app-challenge/assets/mock/movie.mock-data.ts":
+/***/ "../../../../../src/assets/mock/movie.mock-data.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return movies; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__movie_model__ = __webpack_require__("../../../../../src/betsson-app-challenge/assets/mock/movie.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__movie_model__ = __webpack_require__("../../../../../src/assets/mock/movie.model.ts");
 
 var movies = [
     {
@@ -813,7 +816,7 @@ var movies = [
 
 /***/ }),
 
-/***/ "../../../../../src/betsson-app-challenge/assets/mock/movie.model.ts":
+/***/ "../../../../../src/assets/mock/movie.model.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
