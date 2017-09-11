@@ -44,7 +44,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_mock_movie_mock_data__ = __webpack_require__("../../../../../src/assets/mock/movie.mock-data.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_mock_movie_mock_data__ = __webpack_require__("../../../../../src//betsson-app-challenge/assets/mock/movie.mock-data.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -313,7 +313,7 @@ var _a;
 /***/ "../../../../../src/app/components/menu/menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"menu\">\n  <div\n    class=\"app-menu\">\n    <ul class=\"menu-ul\">\n      <li>\n        <a\n          href=\"https://www.imdb.com\">\n          IMDB full\n        </a>\n      </li>\n      <li>\n        <a\n          href=\"https://github.com/pablohpsilva\">\n          pablohpsilva Github\n        </a>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"layout\">\n  <div class=\"header\">\n    <div class=\"menu-icon\">\n      <img\n        src=\"/assets/images/icons/three.svg\"\n        alt=\"\"/>\n    </div>\n\n    <div\n      class=\"menu-content\">\n      <div\n        [hidden]=\"searchable\"\n        class=\"menu-item\">\n        IMDB-Lite\n      </div>\n      <div\n        [hidden]=\"!searchable\"\n        class=\"menu-item\">\n        <input\n          [(ngModel)]=\"textFilter\"\n          (keyup)=\"textFilterMovies()\"\n          type=\"text\"/>\n      </div>\n    </div>\n\n    <div\n      class=\"menu-right\">\n      <div\n        (click)=\"toggleSearchBar()\"\n        class=\"menu-icon\">\n        <img\n          src=\"/assets/images/icons/search.svg\"\n          alt=\"\"/>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"menu\">\n  <div\n    class=\"app-menu\">\n    <ul class=\"menu-ul\">\n      <li>\n        <a\n          href=\"https://www.imdb.com\">\n          IMDB full\n        </a>\n      </li>\n      <li>\n        <a\n          href=\"https://github.com/pablohpsilva\">\n          pablohpsilva Github\n        </a>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"layout\">\n  <div class=\"header\">\n    <div class=\"menu-icon\">\n      <img\n        src=\"//betsson-app-challenge/assets/images/icons/three.svg\"\n        alt=\"\"/>\n    </div>\n\n    <div\n      class=\"menu-content\">\n      <div\n        [hidden]=\"searchable\"\n        class=\"menu-item\">\n        IMDB-Lite\n      </div>\n      <div\n        [hidden]=\"!searchable\"\n        class=\"menu-item\">\n        <input\n          [(ngModel)]=\"textFilter\"\n          (keyup)=\"textFilterMovies()\"\n          type=\"text\"/>\n      </div>\n    </div>\n\n    <div\n      class=\"menu-right\">\n      <div\n        (click)=\"toggleSearchBar()\"\n        class=\"menu-icon\">\n        <img\n          src=\"//betsson-app-challenge/assets/images/icons/search.svg\"\n          alt=\"\"/>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -341,7 +341,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_mock_movie_model__ = __webpack_require__("../../../../../src/assets/mock/movie.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_mock_movie_model__ = __webpack_require__("../../../../../src//betsson-app-challenge/assets/mock/movie.model.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -479,7 +479,7 @@ var TileComponent = (function () {
     TileComponent.prototype.getBackgroundStyle = function () {
         return {
             'background-size': 'cover',
-            'background-image': "url(../../../assets/images/movie-covers/" + this.img + ")",
+            'background-image': "url(../../..//betsson-app-challenge/assets/images/movie-covers/" + this.img + ")",
             'background-position': 'center',
         };
     };
@@ -536,12 +536,12 @@ var _a;
 
 /***/ }),
 
-/***/ "../../../../../src/assets/mock/movie.mock-data.ts":
+/***/ "../../../../../src//betsson-app-challenge/assets/mock/movie.mock-data.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return movies; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__movie_model__ = __webpack_require__("../../../../../src/assets/mock/movie.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__movie_model__ = __webpack_require__("../../../../../src//betsson-app-challenge/assets/mock/movie.model.ts");
 
 var movies = [
     {
@@ -813,7 +813,7 @@ var movies = [
 
 /***/ }),
 
-/***/ "../../../../../src/assets/mock/movie.model.ts":
+/***/ "../../../../../src//betsson-app-challenge/assets/mock/movie.model.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
