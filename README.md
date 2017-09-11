@@ -9,6 +9,12 @@ The project is using:
 
 ## Testing the app
 
-Run `yarn` to download all dependencies.
+Go to [https://pablohpsilva.github.io/betsson-app-challenge/](https://pablohpsilva.github.io/betsson-app-challenge/) to the live application.
 
-After getting all packages installed, run `yarn start` for a dev server. Navigate to `http://localhost:4200/`.
+**OR**
+
+`git clone` this repo and follow these instructions:
+
+* Run `yarn` to download all dependencies.
+* After getting all packages installed, run `yarn start` for a dev server. Navigate to `http://localhost:4200/`.
+
