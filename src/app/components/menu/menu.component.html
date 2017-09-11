@@ -37,6 +37,7 @@
         [hidden]="!searchable"
         class="menu-item">
         <input
+          class="menu-input"
           [(ngModel)]="textFilter"
           (keyup)="textFilterMovies()"
           type="text"/>
