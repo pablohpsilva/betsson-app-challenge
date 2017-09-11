@@ -1,25 +1,56 @@
 <div class="menu">
-  <div class="app-menu"></div>
+  <div
+    class="app-menu">
+    <ul class="menu-ul">
+      <li>
+        <a
+          href="https://www.imdb.com">
+          IMDB full
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/pablohpsilva">
+          pablohpsilva Github
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
+
 <div class="layout">
   <div class="header">
     <div class="menu-icon">
-      <img src="/assets/images/icons/three.svg" alt="">
+      <img
+        src="/assets/images/icons/three.svg"
+        alt=""/>
     </div>
 
-    <div class="menu-content">
-      <div [hidden]="searchable" class="menu-item">
+    <div
+      class="menu-content">
+      <div
+        [hidden]="searchable"
+        class="menu-item">
         IMDB-Lite
       </div>
-      <div [hidden]="!searchable" class="menu-item">
-        <input [(ngModel)]="textFilter" (keyup)="textFilterMovies()" type="text">
-        <!-- <input (click)="toggleGenre()" type="checkbox" *ngFor="let genre of genreTypes" value="{{genre.value}}" [(ngModel)]="genre.checked"/> -->
+      <div
+        [hidden]="!searchable"
+        class="menu-item">
+        <input
+          [(ngModel)]="textFilter"
+          (keyup)="textFilterMovies()"
+          type="text"/>
       </div>
     </div>
 
-    <div class="menu-right">
-      <div (click)="toggleSearchBar()" class="menu-icon">
-        <img src="/assets/images/icons/search.svg" alt="">
+    <div
+      class="menu-right">
+      <div
+        (click)="toggleSearchBar()"
+        class="menu-icon">
+        <img
+          src="/assets/images/icons/search.svg"
+          alt=""/>
       </div>
     </div>
   </div>

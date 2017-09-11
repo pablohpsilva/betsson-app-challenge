@@ -81,6 +81,19 @@
   pointer-events: auto;
 }
 
+.menu-ul {
+  list-style: none;
+  padding: 0 16px;
+
+  li {
+    margin-bottom: 16px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+}
 
 
 

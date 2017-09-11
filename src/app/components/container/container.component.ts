@@ -29,6 +29,15 @@ export class ContainerComponent implements OnInit, AfterViewInit {
     movie.show = !movie.show
   }
 
+  getCollapsedExpandedMeasures(collapsed, expanded) {
+    return [
+      collapsed.top - expanded.top,
+      collapsed.left - expanded.left,
+      collapsed.width / expanded.width,
+      collapsed.height / expanded.height,
+    ]
+  }
+
   setTileElementOnClickEvent(elem) {
     elem.addEventListener('click', () => {
       if (elem.classList.contains('collapsed')) {
@@ -44,10 +53,7 @@ export class ContainerComponent implements OnInit, AfterViewInit {
         const expanded = elem.getBoundingClientRect();
         elem.classList.add('transition');
 
-        const invertedTop = collapsed.top - expanded.top;
-        const invertedLeft = collapsed.left - expanded.left;
-        const invertedWidth = collapsed.width / expanded.width;
-        const invertedHeight = collapsed.height / expanded.height;
+        const [invertedTop, invertedLeft, invertedWidth, invertedHeight] = this.getCollapsedExpandedMeasures(collapsed, expanded);
 
         elem.style.transformOrigin = 'top left';
 
@@ -71,7 +77,7 @@ export class ContainerComponent implements OnInit, AfterViewInit {
     close.addEventListener('click', () => {
       if (elem.classList.contains('expanded') && !elem.classList.contains('collapsing')) {
 
-        requestAnimationFrame(function () {
+        requestAnimationFrame(() => {
           elem.classList.add('collapsing');
           elem.classList.remove('expanded');
           elem.classList.add('collapsed');
@@ -83,10 +89,7 @@ export class ContainerComponent implements OnInit, AfterViewInit {
           const expanded = elem.getBoundingClientRect();
           elem.classList.add('transition');
 
-          const invertedTop = collapsed.top - expanded.top;
-          const invertedLeft = collapsed.left - expanded.left;
-          const invertedWidth = collapsed.width / expanded.width;
-          const invertedHeight = collapsed.height / expanded.height;
+          const [invertedTop, invertedLeft, invertedWidth, invertedHeight] = this.getCollapsedExpandedMeasures(collapsed, expanded);
 
           elem.style.transformOrigin = 'top left';
           elem.style.transform = `translate(${invertedLeft}px, ${invertedTop}px) scale(${invertedWidth}, ${invertedHeight})`;
